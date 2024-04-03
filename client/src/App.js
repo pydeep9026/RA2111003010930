@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
@@ -12,8 +12,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <FilterBar />
+        <Routes>
         <Route path="/" exact component={ProductList} />
         <Route path="/product/:productId" component={ProductDetail} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
